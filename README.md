@@ -1,6 +1,6 @@
 # 윈도우용 콜맥(colemak) 한글 입력 프로그램
 ## 라이센스(license)
-GNU General Public License v3.0
+[GNU General Public License v3.0](https://ko.wikipedia.org/wiki/GNU_%EC%9D%BC%EB%B0%98_%EA%B3%B5%EC%A4%91_%EC%82%AC%EC%9A%A9_%ED%97%88%EA%B0%80%EC%84%9C)
 
 ## 소개
 윈도우 운영체제에서 콜맥 자판을 한글과 함께 간편히 사용할 수 있는 프로그램입니다.
