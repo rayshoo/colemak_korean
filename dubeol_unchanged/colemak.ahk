@@ -776,18 +776,27 @@ if(ret=0)
 	GetKeyState, capstate, CapsLock, T
 	if capstate=D
 	{
-		Send, +{SC027}
+		Send, O
 	}
 	if capstate=U
 	{
-		Send, {SC027}
+		Send, o
 	}
 	Suspend Off
 }
 else
 {
 	Suspend On
-	Send, {SC027}
+	GetKeyState, capstate, CapsLock, T
+	if capstate=D
+	{
+		SetKeyDelay -1
+		Send, {Blind}p
+	}
+	if capstate=U
+	{
+		Send, p
+	}
 	Suspend Off
 }
 return
@@ -800,55 +809,63 @@ if(ret=0)
 	GetKeyState, capstate, CapsLock, T
 	if capstate=D
 	{
-		Send, {SC027}
+		Send, o
 	}
 	if capstate=U
 	{
-		Send, +{SC027}
+		Send, O
 	}
 	Suspend Off
 }
 else
 {
 	Suspend On
-	Send, +{SC027}
+	GetKeyState, capstate, CapsLock, T
+	if capstate=D
+	{
+		SetKeyDelay -1
+		Send, {Blind}+p
+	}
+	if capstate=U
+	{
+		Send, +p
+	}
 	Suspend Off
 }
 return
-
 ^p::
 Suspend On
-Send, ^{SC027}
+Send, ^o
 Suspend Off
 return
 !p::
 Suspend On
-Send, !{SC027}
+Send, !o
 Suspend Off
 return
 #p::
 Suspend On
-Send, #{SC027}
+Send, #o
 Suspend Off
 return
 +!p::
 Suspend On
-Send, +!{SC027}
+Send, +!o
 Suspend Off
 return
 ^+p::
 Suspend On
-Send, ^+{SC027}
+Send, ^+o
 Suspend Off
 return
 ^!p::
 Suspend On
-Send, ^!{SC027}
+Send, ^!o
 Suspend Off
 return
 ^!+p::
 Suspend On
-Send, ^!+{SC027}
+Send, ^!+o
 Suspend Off
 return
 
@@ -1567,103 +1584,48 @@ Suspend Off
 return
 
 SC027::
-ret:=IME_CHECK("A")
-if(ret=0)
-{
-	Suspend On
-	GetKeyState, capstate, CapsLock, T
-	if capstate=D
-	{
-		Send, O
-	}
-	if capstate=U
-	{
-		Send, o
-	}
-	Suspend Off
-}
-else
-{
-	Suspend On
-	GetKeyState, capstate, CapsLock, T
-	if capstate=D
-	{
-		SetKeyDelay -1
-		Send, {Blind}p
-	}
-	if capstate=U
-	{
-		Send, p
-	}
-	Suspend Off
-}
+Suspend On
+Send, {SC027}
+Suspend Off
 return
-
 +SC027::
-ret:=IME_CHECK("A")
-if(ret=0)
-{
-	Suspend On
-	GetKeyState, capstate, CapsLock, T
-	if capstate=D
-	{
-		Send, o
-	}
-	if capstate=U
-	{
-		Send, O
-	}
-	Suspend Off
-}
-else
-{
-	Suspend On
-	GetKeyState, capstate, CapsLock, T
-	if capstate=D
-	{
-		SetKeyDelay -1
-		Send, {Blind}+p
-	}
-	if capstate=U
-	{
-		Send, +p
-	}
-	Suspend Off
-}
+Suspend On
+Send, +{SC027}
+Suspend Off
 return
 ^SC027::
 Suspend On
-Send, ^o
+Send, ^{SC027}
 Suspend Off
 return
 !SC027::
 Suspend On
-Send, !o
+Send, !{SC027}
 Suspend Off
 return
 #SC027::
 Suspend On
-Send, #o
+Send, #{SC027}
 Suspend Off
 return
 +!SC027::
 Suspend On
-Send, +!o
+Send, +!{SC027}
 Suspend Off
 return
 ^+SC027::
 Suspend On
-Send, ^+o
+Send, ^+{SC027}
 Suspend Off
 return
 ^!SC027::
 Suspend On
-Send, ^!o
+Send, ^!{SC027}
 Suspend Off
 return
 ^!+SC027::
 Suspend On
-Send, ^!+o
+Send, ^!+{SC027}
 Suspend Off
 return
 
@@ -1782,6 +1744,7 @@ return
 ;/::
 
 
+
 Capslock::BackSpace
 +Capslock::Capslock
 ; +Capslock::
@@ -1813,20 +1776,6 @@ SetStoreCapsLockMode, Off
 Send, ^!+{Capslock}
 return
 
-; F1::Left
-; +F1::F1
-; F2::Down
-; +F2::F2
-; F3::Up
-; +F3::F3
-; F4::Right
-; +F4::F4
-; F7::F2
-; +F7::F7
-; F9::Home
-; +F9::F9
-; F10::End
-; +F10::F10
 IME_CHECK(WinTitle) 
 {
 	WinGet,hWnd,ID,%WinTitle% 
