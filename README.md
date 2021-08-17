@@ -18,15 +18,10 @@
 ## 설명
 `키 입력을 가로채서 바꿔 전달해주는 것이기 때문에(키 매핑) windows 입력기가 Microsoft 한글 입력기 일경우에만 제대로 적용됩니다.`
 
-두벌식 한글 사용을 전제로 개발했기 때문에 두벌식에서만 사용 가능하며, 콜맥 자판과의 호환성을 살리기 위해서 ; 키와 ㅔ 키의 위치를 임의로 바꿨습니다. 이것이 마음에 안든다면 코드를 수정하고 컴파일한 후 사용하시기 바랍니다.<br>
-`수정 후 배포할시에 GPL 라이센스가 적용됩니다.`<br>
+두벌식 한글 사용을 전제로 개발했기 때문에 두벌식에서만 사용 가능하며, 콜맥 자판과의 호환성을 살리기 위해서 ; 키와 ㅔ 키의 위치를 바꾼 것과 안바꾼 것 두 가지를 동시에 제공합니다.<br>
 ### 두벌식 한글 변경점(변경 전 키 : 변경 후 키)
 <kbd>;</kbd> : <kbd>ㅔ</kbd><br>
 <kbd>ㅔ</kbd> : <kbd>;</kbd><br>
-
-colemak_korean 폴더 내부에 short_key_colemak 폴더와 short_key_qwerty 폴더가 있습니다. short_key_colemak 폴더는 단축키까지 콜맥 자판을 따라가는 것이고, short_key_qwerty 폴더는 기본 입력은 콜맥이지만, 단축키는 쿼티를 따라갑니다. 아직 콜맥자판이 익숙하지 않거나 혹은 기본 입력은 콜맥이 좋지만 단축키는 쿼티의 것을 그대로 사용하고 싶은 사람들을 위해 구분했습니다.
-
-각각의 폴더 속에는 function_key_changed 와 function_key_default 로 나뉩니다. 일반적인 사용자라면 function_key_default 를 사용하면 됩니다. fuction_key_changed 는 개발자인 본인이 사용하기 편하도록 몇몇 키입력을 변경한 것으로, 그것은 하단의 사용법을 참고.
 
 
 ## 사용법
@@ -43,21 +38,7 @@ colemak_korean 폴더 내부에 short_key_colemak 폴더와 short_key_qwerty 폴
 6. 확인 - 작업 스케줄러 창 닫기
 <hr>
 
-### function_key_changed (변경 전 키 : 변경 후 키)
-<kbd>F1</kbd> : <kbd>←</kbd><br>
-<kbd>F2</kbd> : <kbd>↓</kbd><br>
-<kbd>F3</kbd> : <kbd>↑</kbd><br>
-<kbd>F4</kbd> : <kbd>→</kbd><br>
-<kbd>F7</kbd> : <kbd>F2</kbd><br>
-<kbd>F9</kbd> : <kbd>HOME</kbd><br>
-<kbd>F10</kbd> : <kbd>END</kbd>
-
-
-
 ### 콜맥에서 쿼티로 전환(layout to qwerty)
 <kbd>window</kbd>+<kbd>space</kbd><br>
 ![layout_state](https://public5516.s3.ap-northeast-2.amazonaws.com/colemak_korean.PNG)<br>
 화면 최상단 + 최좌측에서 레이아웃을 변경할때 3초간 현재 레이아웃의 상태를 확인할 수 있습니다.
-
-
-

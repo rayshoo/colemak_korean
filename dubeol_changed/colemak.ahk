@@ -122,6 +122,42 @@ else
 }
 return
 
+^e::
+Suspend On
+Send, ^f
+Suspend Off
+return
+!e::
+Suspend On
+Send, !f
+Suspend Off
+return
+#e::
+Suspend On
+Send, #f
+Suspend Off
+return
++!e::
+Suspend On
+Send, +!f
+Suspend Off
+return
+^+e::
+Suspend On
+Send, ^+f
+Suspend Off
+return
+^!e::
+Suspend On
+Send, ^!f
+Suspend Off
+return
+^!+e::
+Suspend On
+Send, ^!+f
+Suspend Off
+return
+
 
 r::
 ret:=IME_CHECK("A")
@@ -189,6 +225,41 @@ else
 	Suspend Off
 }
 return
+^r::
+Suspend On
+Send, ^p
+Suspend Off
+return
+!r::
+Suspend On
+Send, !p
+Suspend Off
+return
+#r::
+Suspend On
+Send, #p
+Suspend Off
+return
++!r::
+Suspend On
+Send, +!p
+Suspend Off
+return
+^+r::
+Suspend On
+Send, ^+p
+Suspend Off
+return
+^!r::
+Suspend On
+Send, ^!p
+Suspend Off
+return
+^!+r::
+Suspend On
+Send, ^!+p
+Suspend Off
+return
 
 t::
 ret:=IME_CHECK("A")
@@ -223,6 +294,7 @@ else
 }
 return
 
+
 +t::
 ret:=IME_CHECK("A")
 if(ret=0)
@@ -254,6 +326,41 @@ else
 	}
 	Suspend Off
 }
+return
+^t::
+Suspend On
+Send, ^g
+Suspend Off
+return
+!t::
+Suspend On
+Send, !g
+Suspend Off
+return
+#t::
+Suspend On
+Send, #g
+Suspend Off
+return
++!t::
+Suspend On
+Send, +!g
+Suspend Off
+return
+^+t::
+Suspend On
+Send, ^+g
+Suspend Off
+return
+^!t::
+Suspend On
+Send, ^!g
+Suspend Off
+return
+^!+t::
+Suspend On
+Send, ^!+g
+Suspend Off
 return
 
 y::
@@ -322,6 +429,41 @@ else
 	Suspend Off
 }
 return
+^y::
+Suspend On
+Send, ^j
+Suspend Off
+return
+!y::
+Suspend On
+Send, !j
+Suspend Off
+return
+#y::
+Suspend On
+Send, #j
+Suspend Off
+return
++!y::
+Suspend On
+Send, +!j
+Suspend Off
+return
+^+y::
+Suspend On
+Send, ^+j
+Suspend Off
+return
+^!y::
+Suspend On
+Send, ^!j
+Suspend Off
+return
+^!+y::
+Suspend On
+Send, ^!+j
+Suspend Off
+return
 
 u::
 ret:=IME_CHECK("A")
@@ -387,6 +529,41 @@ else
 	}
 	Suspend Off
 }
+return
+^u::
+Suspend On
+Send, ^l
+Suspend Off
+return
+!u::
+Suspend On
+Send, !l
+Suspend Off
+return
+#u::
+Suspend On
+Send, #l
+Suspend Off
+return
++!u::
+Suspend On
+Send, +!l
+Suspend Off
+return
+^+u::
+Suspend On
+Send, ^+l
+Suspend Off
+return
+^!u::
+Suspend On
+Send, ^!l
+Suspend Off
+return
+^!+u::
+Suspend On
+Send, ^!+l
+Suspend Off
 return
 
 i::
@@ -454,6 +631,41 @@ else
 	Suspend Off
 }
 return
+^i::
+Suspend On
+Send, ^u
+Suspend Off
+return
+!i::
+Suspend On
+Send, !u
+Suspend Off
+return
+#i::
+Suspend On
+Send, #u
+Suspend Off
+return
++!i::
+Suspend On
+Send, +!u
+Suspend Off
+return
+^+i::
+Suspend On
+Send, ^+u
+Suspend Off
+return
+^!i::
+Suspend On
+Send, ^!u
+Suspend Off
+return
+^!+i::
+Suspend On
+Send, ^!+u
+Suspend Off
+return
 
 o::
 ret:=IME_CHECK("A")
@@ -520,54 +732,86 @@ else
 	Suspend Off
 }
 return
-
-p::
-ret:=IME_CHECK("A")
-if(ret=0)
-{
-	Suspend On
-	GetKeyState, capstate, CapsLock, T
-	if capstate=D
-	{
-		Send, +{SC027}
-	}
-	if capstate=U
-	{
-		Send, {SC027}
-	}
-	Suspend Off
-}
-else
-{
-	Suspend On
-	Send, {SC027}
-	Suspend Off
-}
+^o::
+Suspend On
+Send, ^y
+Suspend Off
+return
+!o::
+Suspend On
+Send, !y
+Suspend Off
+return
+#o::
+Suspend On
+Send, #y
+Suspend Off
+return
++!o::
+Suspend On
+Send, +!y
+Suspend Off
+return
+^+o::
+Suspend On
+Send, ^+y
+Suspend Off
+return
+^!o::
+Suspend On
+Send, ^!y
+Suspend Off
+return
+^!+o::
+Suspend On
+Send, ^!+y
+Suspend Off
 return
 
+p::
+Suspend On
+Send, {SC027}
+Suspend Off
+return
 +p::
-ret:=IME_CHECK("A")
-if(ret=0)
-{
-	Suspend On
-	GetKeyState, capstate, CapsLock, T
-	if capstate=D
-	{
-		Send, {SC027}
-	}
-	if capstate=U
-	{
-		Send, +{SC027}
-	}
-	Suspend Off
-}
-else
-{
-	Suspend On
-	Send, +{SC027}
-	Suspend Off
-
-}
+Suspend On
+Send, +{SC027}
+Suspend Off
+return
+^p::
+Suspend On
+Send, ^{SC027}
+Suspend Off
+return
+!p::
+Suspend On
+Send, !{SC027}
+Suspend Off
+return
+#p::
+Suspend On
+Send, #{SC027}
+Suspend Off
+return
++!p::
+Suspend On
+Send, +!{SC027}
+Suspend Off
+return
+^+p::
+Suspend On
+Send, ^+{SC027}
+Suspend Off
+return
+^!p::
+Suspend On
+Send, ^!{SC027}
+Suspend Off
+return
+^!+p::
+Suspend On
+Send, ^!+{SC027}
+Suspend Off
 return
 
 ;[::
@@ -640,6 +884,41 @@ else
 	Suspend Off
 }
 return
+^s::
+Suspend On
+Send, ^r
+Suspend Off
+return
+!s::
+Suspend On
+Send, !r
+Suspend Off
+return
+#s::
+Suspend On
+Send, #r
+Suspend Off
+return
++!s::
+Suspend On
+Send, +!r
+Suspend Off
+return
+^+s::
+Suspend On
+Send, ^+r
+Suspend Off
+return
+^!s::
+Suspend On
+Send, ^!r
+Suspend Off
+return
+^!+s::
+Suspend On
+Send, ^!+r
+Suspend Off
+return
 
 d::
 ret:=IME_CHECK("A")
@@ -705,6 +984,41 @@ else
 	}
 	Suspend Off
 }
+return
+^d::
+Suspend On
+Send, ^s
+Suspend Off
+return
+!d::
+Suspend On
+Send, !s
+Suspend Off
+return
+#d::
+Suspend On
+Send, #s
+Suspend Off
+return
++!d::
+Suspend On
+Send, +!s
+Suspend Off
+return
+^+d::
+Suspend On
+Send, ^+s
+Suspend Off
+return
+^!d::
+Suspend On
+Send, ^!s
+Suspend Off
+return
+^!+d::
+Suspend On
+Send, ^!+s
+Suspend Off
 return
 
 f::
@@ -772,6 +1086,41 @@ else
 	Suspend Off
 }
 return
+^f::
+Suspend On
+Send, ^t
+Suspend Off
+return
+!f::
+Suspend On
+Send, !t
+Suspend Off
+return
+#f::
+Suspend On
+Send, #t
+Suspend Off
+return
++!f::
+Suspend On
+Send, +!t
+Suspend Off
+return
+^+f::
+Suspend On
+Send, ^+t
+Suspend Off
+return
+^!f::
+Suspend On
+Send, ^!t
+Suspend Off
+return
+^!+f::
+Suspend On
+Send, ^!+t
+Suspend Off
+return
 
 g::
 ret:=IME_CHECK("A")
@@ -837,6 +1186,41 @@ else
 	}
 	Suspend Off
 }
+return
+^g::
+Suspend On
+Send, ^d
+Suspend Off
+return
+!g::
+Suspend On
+Send, !d
+Suspend Off
+return
+#g::
+Suspend On
+Send, #d
+Suspend Off
+return
++!g::
+Suspend On
+Send, +!d
+Suspend Off
+return
+^+g::
+Suspend On
+Send, ^+d
+Suspend Off
+return
+^!g::
+Suspend On
+Send, ^!d
+Suspend Off
+return
+^!+g::
+Suspend On
+Send, ^!+d
+Suspend Off
 return
 
 ;h::
@@ -906,6 +1290,41 @@ else
 	Suspend Off
 }
 return
+^j::
+Suspend On
+Send, ^n
+Suspend Off
+return
+!j::
+Suspend On
+Send, !n
+Suspend Off
+return
+#j::
+Suspend On
+Send, #n
+Suspend Off
+return
++!j::
+Suspend On
+Send, +!n
+Suspend Off
+return
+^+j::
+Suspend On
+Send, ^+n
+Suspend Off
+return
+^!j::
+Suspend On
+Send, ^!n
+Suspend Off
+return
+^!+j::
+Suspend On
+Send, ^!+n
+Suspend Off
+return
 
 k::
 ret:=IME_CHECK("A")
@@ -971,6 +1390,41 @@ else
 	}
 	Suspend Off
 }
+return
+^k::
+Suspend On
+Send, ^e
+Suspend Off
+return
+!k::
+Suspend On
+Send, !e
+Suspend Off
+return
+#k::
+Suspend On
+Send, #e
+Suspend Off
+return
++!k::
+Suspend On
+Send, +!e
+Suspend Off
+return
+^+k::
+Suspend On
+Send, ^+e
+Suspend Off
+return
+^!k::
+Suspend On
+Send, ^!e
+Suspend Off
+return
+^!+k::
+Suspend On
+Send, ^!+e
+Suspend Off
 return
 
 l::
@@ -1038,6 +1492,41 @@ else
 	Suspend Off
 }
 return
+^l::
+Suspend On
+Send, ^i
+Suspend Off
+return
+!l::
+Suspend On
+Send, !i
+Suspend Off
+return
+#l::
+Suspend On
+Send, #i
+Suspend Off
+return
++!l::
+Suspend On
+Send, +!i
+Suspend Off
+return
+^+l::
+Suspend On
+Send, ^+i
+Suspend Off
+return
+^!l::
+Suspend On
+Send, ^!i
+Suspend Off
+return
+^!+l::
+Suspend On
+Send, ^!+i
+Suspend Off
+return
 
 SC027::
 ret:=IME_CHECK("A")
@@ -1103,6 +1592,41 @@ else
 	}
 	Suspend Off
 }
+return
+^SC027::
+Suspend On
+Send, ^o
+Suspend Off
+return
+!SC027::
+Suspend On
+Send, !o
+Suspend Off
+return
+#SC027::
+Suspend On
+Send, #o
+Suspend Off
+return
++!SC027::
+Suspend On
+Send, +!o
+Suspend Off
+return
+^+SC027::
+Suspend On
+Send, ^+o
+Suspend Off
+return
+^!SC027::
+Suspend On
+Send, ^!o
+Suspend Off
+return
+^!+SC027::
+Suspend On
+Send, ^!+o
+Suspend Off
 return
 
 ;SC028::
@@ -1177,12 +1701,48 @@ else
 	Suspend Off
 }
 return
+^n::
+Suspend On
+Send, ^k
+Suspend Off
+return
+!n::
+Suspend On
+Send, !k
+Suspend Off
+return
+#n::
+Suspend On
+Send, #k
+Suspend Off
+return
++!n::
+Suspend On
+Send, +!k
+Suspend Off
+return
+^+n::
+Suspend On
+Send, ^+k
+Suspend Off
+return
+^!n::
+Suspend On
+Send, ^!k
+Suspend Off
+return
+^!+n::
+Suspend On
+Send, ^!+k
+Suspend Off
+return
 
 #+m::#+m
 #m::#m
 ;,::
 ;.::
 ;/::
+
 
 
 Capslock::BackSpace
@@ -1214,167 +1774,6 @@ return
 ^!+Capslock::
 SetStoreCapsLockMode, Off
 Send, ^!+{Capslock}
-return
-
-F1::Left
-+F1::
-Send, +{F1}
-return
-!F1::
-Send, !{F1}
-return
-#F1::
-Send, #{F1}
-return
-+!F1::
-Send, +!{F1}
-return
-^+F1::
-Send, ^+{F1}
-return
-^!F1::
-Send, ^!{F1}
-return
-^!+F1::
-Send, ^!+{F1}
-return
-
-F2::Down
-+F2::
-Send, +{F2}
-return
-!F2::
-Send, !{F2}
-return
-#F2::
-Send, #{F2}
-return
-+!F2::
-Send, +!{F2}
-return
-^+F2::
-Send, ^+{F2}
-return
-^!F2::
-Send, ^!{F2}
-return
-^!+F2::
-Send, ^!+{F2}
-return
-
-F3::Up
-+F3::
-Send, +{F3}
-return
-!F3::
-Send, !{F3}
-return
-#F3::
-Send, #{F3}
-return
-+!F3::
-Send, +!{F3}
-return
-^+F3::
-Send, ^+{F3}
-return
-^!F3::
-Send, ^!{F3}
-return
-^!+F3::
-Send, ^!+{F3}
-return
-
-F4::Right
-+F4::
-Send, +{F4}
-return
-!F4::
-Send, !{F4}
-return
-#F4::
-Send, #{F4}
-return
-+!F4::
-Send, +!{F4}
-return
-^+F4::
-Send, ^+{F4}
-return
-^!F4::
-Send, ^!{F4}
-return
-^!+F4::
-Send, ^!+{F4}
-return
-
-F7::F2
-+F7::
-Send, +{F7}
-return
-!F7::
-Send, !{F7}
-return
-#F7::
-Send, #{F7}
-return
-+!F7::
-Send, +!{F7}
-return
-^+F7::
-Send, ^+{F7}
-return
-^!F7::
-Send, ^!{F7}
-return
-^!+F7::
-Send, ^!+{F7}
-return
-
-F9::Home
-+F9::
-Send, +{F9}
-return
-!F9::
-Send, !{F9}
-return
-#F9::
-Send, #{F9}
-return
-+!F9::
-Send, +!{F9}
-return
-^+F9::
-Send, ^+{F9}
-return
-^!F9::
-Send, ^!{F9}
-return
-^!+F9::
-Send, ^!+{F9}
-return
-
-F10::End
-+F10::
-Send, +{F10}
-return
-!F10::
-Send, !{F10}
-return
-#F10::
-Send, #{F10}
-return
-+!F10::
-Send, +!{F10}
-return
-^+F10::
-Send, ^+{F10}
-return
-^!F10::
-Send, ^!{F10}
-return
-^!+F10::
-Send, ^!+{F10}
 return
 
 IME_CHECK(WinTitle) 
